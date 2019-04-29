@@ -1,0 +1,21 @@
+info:
+  name: User Base Service
+  version: 1.0.0
+  author: Excepts
+
+spring:
+  application.name: ubs
+  cloud.consul:
+      port: 8510
+      config:
+        format: yaml
+      discovery:
+        enabled: true
+        tags: version=${project.version}, author=${info.author}
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/ubs?zeroDateTimeBehavior=convertToNull&autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+      connection-test-query: select 1

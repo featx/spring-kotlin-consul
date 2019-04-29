@@ -1,0 +1,13 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 18080
+    servlet:
+      context-path: /
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
